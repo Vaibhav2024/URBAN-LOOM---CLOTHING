@@ -35,10 +35,19 @@ const productSchema = new mongoose.Schema({
     date: {
         type: Number,
         required: true
+    },
+    rating: {
+        type: Number,
+        default: 4.5
+    },
+    reviewCount: {
+        type: Number,
+        default: 12
+    },
+    discount: {
+        type: Number,
+        default: 0
     }
-}, {timestamps: true})
-
-
+}, { timestamps: true })
 
 export const productModel = mongoose.model.product || mongoose.model("product", productSchema)
-// so if the product model is already available then export that or create a new one
